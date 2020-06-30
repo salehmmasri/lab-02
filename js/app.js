@@ -82,12 +82,12 @@ Animals.prototype.fun2 = function () {
 
 $('#photo-name').on('click', function () {
   console.log($('#photo-name').val());
-  $('#gallery div').css('display', 'none');
+  $('#gallery div').hide();
   if (`${$('#photo-name').val()}` === `all`) {
-    $('#gallery div').css('display', 'flex');
+    $('#gallery div').show();
 
   }
-  $(`.${$('#photo-name').val()}`).css('display', 'flex');
+  $(`.${$('#photo-name').val()}`).show();
 });
 
 
