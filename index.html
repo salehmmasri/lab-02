@@ -5,30 +5,45 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/base.css">
+    <!-- this mustache for append div in gallery -->
     <script id='animalsTemp' type="text/x-tmpl-mustache">
-        <div>
-          <h4>{{title}}</h4>
-          <p>{{rhino}}</p>
-        </div>
+    <div class="{{keyword}}">
+        <h4>{{title}}</h4>
+        <img src="{{imageUrl}}"/>      
+        <p>{{description}}</p>
+    </div>
     
+</script>
+    <!-- this mustache for append options in select tag -->
+    <script id='addoptions' type="text/x-tmpl-mustache">
+        <option value="{{keyword}}">{{keyword}}</option>
     </script>
     <title>Lab-2</title>
 </head>
 
 <body>
-
-    <header id="saleh">
-
+    <header>
     </header>
     <main>
         <h1>The gallery of hourns</h1>
         <section>
             <select name="" id="photo-name">
-                <option value="" select="" id="selecteed">All Horens</option>
+                <option value="all"  >All Horens</option>
             </select>
         </section>
+        <section>
+            <select name="" id="sort-ch">
+                <option value="sort-by" >Sort by</option>
+                <option value="title"  > title</option>
+                <option value="nOfHorens"  ># of Horens</option>
+            </select>
+        </section>
+        <section>
+            <button id="page-1">page1</button>
+            <button id="page-2">page2</button>
+        </section>
         <section id="gallery">
-            
+
         </section>
     </main>
     <footer>
