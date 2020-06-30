@@ -10,7 +10,7 @@ $.ajax('./data/page-1.json',ajaxSettings)
     .then(data => {
         data.forEach((val,idx)=>{
             let animals = new Animals(val.image_url,val.title,val.description,val.keyword,val.horns);
-             animals.render();
+             animals.displayan();
         })
     })
 
@@ -25,20 +25,10 @@ function Animals (imageUrl,title,description,keyword,horns){
     this.horns=horns;
     arr.push(this);
 }
-let arrayAnimal=[];
-Animals.prototype.render=function(){
-    if(arrayAnimal.includes(this.keyword)){
-    }
-    else{
-        let optEl=`<option>${this.keyword}</option>`;
-        $("#photo-name").append(optEl);
-    }
-    arrayAnimal.push(this.keyword);
-    $('#gallery').append(`<div>
-    <h4>${this.title}</h4>
-    <img src="${this.imageUrl}">
-    <p>${this.description}</p>
-    </div>`);
+Animals.prototype.displayan = function(){
+    let musTemplate = $('#animalsTemp').html();
+    let newObj = Mustache.render(musTemplate,this);
+    $('#gallery').append(newObj);
 }
 
 $("#photo-name").on('click',function(){
