@@ -1,0 +1,27 @@
+
+#photo-name{
+    box-shadow: 6px 2px 10px 5px rgba(0, 0, 0, 0.12);
+}
+section{
+    text-align: center;
+}
+select{
+    width: 25%;
+    height: 40px;
+}
+
+#gallery div{
+    flex-direction: row !important;
+    width: 400px;    
+    box-shadow: 11px 7px 10px 5px rgba(173, 139, 139, 0.5);
+}
+#gallery{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    justify-content: space-around;
+
+}
+.mycont{
+    background-color: blue;
+}
